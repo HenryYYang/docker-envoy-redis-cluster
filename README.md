@@ -97,5 +97,5 @@ We use [Pumba](https://github.com/alexei-led/pumba) for simulating networking er
 #####Network partition
 The following example will cause a 1 minute network partition between redis-replica-1 and the rest of the cluster
 ```bash
-docker-compose run pumba netem --duration 1m --target 172.25.0.2 --target 172.25.0.3 --target 172.25.0.4 --target 172.25.0.5 --target 172.25.0.7 loss -p 100 docker-envoy-redis-cluster_redis-replica-1_1
+docker-compose run -rm pumba netem --duration 1m --target 172.25.0.2 --target 172.25.0.3 --target 172.25.0.4 --target 172.25.0.5 --target 172.25.0.7 loss -p 100 docker-envoy-redis-cluster_redis-replica-1_1
 ```
